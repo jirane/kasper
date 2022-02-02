@@ -11,8 +11,11 @@
     padding: 0;
     margin:0;
 }
-html{scroll-behavior: smooth;}
+html{
+    overflow-x:hidden;
+    scroll-behavior: smooth;}
 body{
+    overflow-x:hidden;
     font-family: 'Cairo', sans-serif;
     font-family: 'Roboto', sans-serif;
     height:10000px;
@@ -42,6 +45,11 @@ ul{
     @media (min-width:1200px){
         .container{
             width:1170px;
+        }
+    }
+    @media(max-width:600px){
+        .container{
+            width: 100vw;
         }
     }
 /* end global rules */
@@ -454,6 +462,7 @@ ul{
     margin-top:150px;
     margin-bottom:80pxpx;
     position:relative;
+    overflow: hidden;
 }
 .video-section video{
     width:100%;
@@ -667,6 +676,240 @@ ul{
     }
 }
 /* end testimonials  */
+/* start quote */
+.quote{
+    background-image: url(../imgs/mountain.jpg);
+    background-position: center;
+    background-size:cover;
+    position: relative;
+    display:flex;
+    text-align: center;
+    padding:100px;
+}
+.quote::after{
+    position: absolute;
+    content:'';
+    background-color:rgba(0,0,0,0.25);
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:0;
+}
+.quote .container p:first-of-type{
+    position:relative;
+    color:#fff;
+    text-transform:uppercase;
+    font-weight:800;
+    font-size:30px;
+    text-align:center;
+    line-height:1.5;
+    z-index:1;
+}
+.quote .container p:nth-of-type(2){
+    position:relative;
+    margin-top:30px;
+    color:#fff;
+    text-transform:capitalize;
+    font-weight: bold;
+    font-style:italic;
+    z-index:2;
+}
+/* end quote  */
+/* start pricing */
+.pricing{
+    padding-top:80px;
+    text-align:center
+}
+.pricing .main-heading p{
+    margin:70px;
+    color:var(--thd-color);
+}
+.pricing .plans{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:20px;
+}
+.pricing .plans .plan .head{
+    position:relative;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+.pricing .plans .plan .head::before{
+    content:'';
+    position:absolute;
+    background-color:var(--main-color);
+    height:3px;
+    width:200px;
+    top:0;
+    right:50%;
+    transform:translatex(50%)
+}
+.pricing .plans .plan .head::after{
+    content:'';
+    position:absolute;
+    background-color:var(--main-color);
+    height:3px;
+    width:200px;
+    bottom:0;
+    right:50%;
+    transform:translatex(50%)
+}
+.pricing .plans .plan .head h4{
+    text-transform: uppercase;
+    font-weight:500;
+}
+.pricing .plans .plan .head span{
+    position:relative;
+    font-weight:600;
+    font-size:60px;
+    top:10px;
+}
+.pricing .plans .plan .head span::before{
+    content:'$';
+    position:absolute;
+    top:10px;
+    left:-20px;
+    font-size:20px;
+}
+.pricing .plans .plan .head span::after{
+    content:'/MO';
+    position:absolute;
+    bottom:10px;
+    right:-40px;
+    font-size: 17px;
+}
+.pricing .plans .plan .plan-content{
+    position:relative;
+    padding-top:10px;
+}
+.pricing .plans .plan .plan-content::after{
+    content:'';
+    position:absolute;
+    background-color:var(--main-color);
+    width:200px;
+    height:3px;
+    right:50%;
+    transform:translatex(50%)
+}
+.pricing .plans .plan .plan-content ul li{
+    position:relative;
+    padding:30px;
+}
+.pricing .plans .plan .plan-content ul li:not(:last-of-type)::after{
+    content:'';
+    position:absolute;
+    background-color:var(--main-color);
+    width:120px;
+    height:2px;
+    bottom:0;
+    right:50%;
+    transform:translatex(50%);
+}
+.pricing .plans .plan .btn{margin-top:30px;}
+.pricing .plans .plan .btn button{
+    background-color:#fff;
+    border-color:var(--main-color);
+    border-style:solid;
+    border-width:3px;
+    padding:10px 35px;
+    cursor:pointer;
+    text-transform:capitalize;
+    font-weight:550;
+}
+.pricing .pricing-info{
+    padding-top:60px;
+    padding-bottom:60px;
+}
+.pricing .pricing-info p{
+    margin:30px;
+    font-size:20px;
+    font-weight:500;
+}
+.pricing .pricing-info button{
+    background-color:var(--main-color);
+    color:#fff;
+    padding:10px 40px;
+    cursor:pointer;
+    border:none;
+    font-size:20px;
+    text-transform:capitalize;
+}
+/* end pricing  */
+.subscribe {
+    position:relative;
+    padding-top:80px;
+    padding-bottom:80px;
+    background-image:url(../imgs/mountain.jpg);
+    background-position:center;
+    background-size:cover;
+}
+.subscribe::after{
+    content:'';
+    position:absolute;
+    background-color:rgba(0,0,0,0.25);
+    width:100%;
+    height:100%;
+    top:0;
+    z-index:0;
+}
+.subscribe .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.subscribe .email{
+    position: relative;
+    display:flex;
+    z-index:1;
+    max-width:100%;
+}
+.subscribe .email i{
+    position:absolute;
+    top:50%;
+    transform:translatey(-50%);
+    left:20px;
+    color:#fff;
+}
+.subscribe .email input[type="text"]{
+    background:none;
+    border:2px solid #fff;
+    border-right:none;
+    padding:20px 20px 20px 60px;
+    caret-color: var(--main-color);
+    color:#fff;
+    outline:none;
+    width:100
+}
+.subscribe .email input::placeholder{
+    color:#fff;
+}
+.subscribe .email input[type="submit"]{
+    background-color: var(--main-color);
+    border:2px solid #fff;
+    border-left:none;
+    color:#fff;
+    padding:20px 40px;
+    outline:none;
+}
+.subscribe .text{
+    position: relative;
+    z-index:1;
+}
+.subscribe .text p{
+    color:#fff;
+    font-size:20px;
+    margin-left:80px;
+}
+@media (max-width:991px){
+    .subscribe .container{
+        flex-direction:column;
+    }
+    .subscribe .text{
+        text-align: center;
+        margin-top:30px;
+    }
+}
 /* start framework */
 .heading{
     font-size:50px;
