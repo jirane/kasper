@@ -56,7 +56,7 @@ ul{
 /* start header */
 .header{
     background-image: url(../imgs/mountain.jpg);
-    height:80vh;
+    height:100vh;
     background-size:cover;
     background-position:center;
     background-attachment: fixed;
@@ -159,9 +159,10 @@ ul{
 }
 .landing .bullets ul{
     position:absolute;
-    right:46%;
     bottom:-150px;
     display:flex;
+    right: 50%;
+    transform: translatex(50%);
 }
 .landing .bullets ul > li{
     width:30px;
@@ -207,10 +208,8 @@ ul{
     }
     .header .landing .text{
         padding: 50px;
-        margin-left:150px !important;
     }
     .landing .bullets ul{
-        right:40%;
         bottom:-90px;
     }
 }
@@ -242,10 +241,7 @@ ul{
     .header .navbar .links ul li a{padding:10px 50px;}
     .header .landing .text{
         padding: 50px;
-        margin-left:250px ;
-    }
-    .landing .bullets ul{
-        right:40%;
+        margin-left:25% ;
     }
 }
 /* large */
@@ -512,7 +508,8 @@ ul{
 .about .image{
     position:absolute;
     width:900px;
-    top:30%;
+    max-width:100%;
+    top:25%;
     left:50%;
     transform:translatex(-50%);
 }
@@ -522,9 +519,6 @@ ul{
 @media(max-width:991px){
     .about{
         height:55vh;
-    }
-    .about .image{
-        width:500px
     }
 }
 /* end about-us */
